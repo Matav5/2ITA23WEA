@@ -1,8 +1,7 @@
 houska
-majoneza
-syr
-krabi maso
-rajce
 salat
+krabi maso
+syr
+rajce
 
-recept: uvař to Patriku
+recept: uvař to Spongebobe
