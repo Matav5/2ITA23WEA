@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vložení do Databáze</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </head>
 <body>
-
+<div class="container">
     <form action="" method="post">
-        <label for="jmeno">Jméno:</label>
-        <input type="text" name="jmeno"><br>
+        <label for="jmeno" class="form-label">Jméno:</label>
+        <input type="text" name="jmeno" class="form-control"><br>
 
-        <label for="odkaz">Odkaz:</label>
-        <input type="text" name="odkaz"><br>
+        <label for="odkaz" class="form-label">Odkaz:</label>
+        <input type="text" name="odkaz" class="form-control"><br>
 
-        <label for="popis">Popis:</label>
-        <textarea name="popis"></textarea><br>
+        <label for="popis" class="form-label">Popis:</label>
+        <textarea name="popis" class="form-control"></textarea><br>
 
-        <label for="vek">Věk:</label>
-        <input type="number" name="vek"><br>
+        <label for="vek" class="form-label">Věk:</label>
+        <input type="number" name="vek" class="form-control"><br>
 
-        <input type="submit" name="uloz" value="Ulož do DB">
+        <input type="submit" name="uloz" value="Ulož do DB" class="btn btn-primary">
     </form>
-
+</div>
     <!-- 
         Jméno kočičky,
         Odkaz k obrázku kočičky,
