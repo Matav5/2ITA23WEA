@@ -27,6 +27,7 @@
             public bool $maZbran;
 
             public function __construct(string $jmeno, int $vek, float $agresivita, string $povolani, bool $maZbran, $id = null) {
+                Global $nejakaPromenna;
                 $this->jmeno = $jmeno;
                 $this->vek = $vek;
                 $this->agresivita = $agresivita;
