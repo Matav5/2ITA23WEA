@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>   
+        <input type="text" name="title" id="title">
+        <textarea name="ingredients" id="ingredients" cols="30" rows="10"></textarea>
+        <textarea name="directions" id="directions" cols="30" rows="10"></textarea>
+
+        <button onclick="PridejRecept()">Přidej Recept</button>
+    </div>
+    <div id="recepty">
+
+
+    </div>
+<script src="../14hod - jQuery/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+<script>
+   let ingredientsEditor;
+   ClassicEditor
+   .create(document.getElementById("ingredients"))
+   .then((editor) =>{
+        ingredientsEditor = editor;
+   });
+   let directionsEditor;
+    ClassicEditor
+    .create(document.getElementById("directions"))
+   .then((editor) =>{
+        directionsEditor = editor;
+    });
+    StahniRecepty();
+    function StahniRecepty(){
+        $.get("https://recipes.matav.cz/recipes",OnReceptyStahnuty)
+    }
+    function OnReceptyStahnuty(data, status){
+        console.log(data);
+        console.log(status);
+        $(".recept").remove();
+        for(let i =0; i< data.length;i++){
+            $("#recepty").append(`
+                <div class="recept">
+                    <h2>${data[i].title}</h2>
+                    <p>${data[i].ingredients}</p>                
+                    <p>${data[i].directions}</p>                
+                </div>    
+            `);
+        }
+    }
+    function PridejRecept(){
+        let data = {};
+        data.title = $("#title").val();
+        data.ingredients = $("#ingredients").val();
+        data.directions = $("#directions").val();
+        console.log(data);
+        //Přidat data
+        $.post("https://recipes.matav.cz/recipes", data , OnReceptPridan)
+    }
+    function OnReceptPridan(data,status){
+        //Vypsat výsledek
+        StahniRecepty();
+
+    }
+
+</script>
+</body>
+</html>
